@@ -8,8 +8,7 @@ In Terraform, there are several object types that are **used to represent variou
 
 ![Resources Object Type](/images/tf_config_concept1.jpg "Resources Object Type").
 
-```
-resource "aws_instance" "example" {
+```resource "aws_instance" "example" {
   ami           = "ami-0c55b159cbfafe1f0"
   instance_type = "t2.micro"
 
@@ -17,7 +16,4 @@ resource "aws_instance" "example" {
     Name = "example-instance"
   }
 }
-
-}
-
 ```
