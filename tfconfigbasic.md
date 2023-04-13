@@ -13,7 +13,8 @@ resource "aws_instance" "example" {
     instance_type = "t2.micro"
 }
 ```
-#### Azure
+#### Azure 
+
 ```
 resource "azurerm_resource_group" "example" {
     name     = "example"
@@ -42,5 +43,36 @@ output "instance_public_ip" {
 ```
 output "azurerm_resource_group" {
     value = azurerm_resource_group.example
+}
+```
+
+### Data source: 
+A data source is **used to retrieve information from an external system, such as AWS or Azure**. It can be used to reference an existing resource or to retrieve information that is needed to create a new resource. 
+
+> Get AWS VPC id
+```
+data "aws_vpc" "example" {
+  id = "vpc-12345678"
+}
+```
+>  Get Resources from a Resource Group
+```
+data "azurerm_resources" "example" {
+  resource_group_name = "example-resources"
+}
+```
+### Provider: 
+A provider is **used to configure and manage the lifecycle of an external service**, such as AWS or Azure. It is responsible for creating, updating, and deleting resources in that service.
+
+```
+provider "aws" {
+  region = var.region
+}
+```
+
+```
+provider "azurerm" {
+  features {
+  }
 }
 ```
