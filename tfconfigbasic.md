@@ -25,7 +25,7 @@ resource "azurerm_resource_group" "example" {
 ```
 
 ### Variable: 
-A variable is used to pass data into a Terraform configuration. It can be used to customize the behavior of a module or to provide input values for a resource. Below is an example of defining a variable:
+A variable is **used to pass data into a Terraform configuration**. It can be used to customize the behavior of a module or to provide input values for a resource. Below is an example of defining a variable:
 ```
 variable "region" {
     type    = string
@@ -33,9 +33,14 @@ variable "region" {
 }
 ```
 ### Output: 
-An output is used to expose data from a Terraform configuration. It can be used to share information with other modules or to display values to the user. Here's an example of defining an output:
+An output is **used to expose data from a Terraform configuration**. It can be used to share information with other modules or to display values to the user. Here's an example of defining an output:
 ```
 output "instance_public_ip" {
     value = aws_instance.example.public_ip
+}
+```
+```
+output "azurerm_resource_group" {
+    value = azurerm_resource_group.example
 }
 ```
